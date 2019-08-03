@@ -32,7 +32,7 @@ export class AppComponent  {
       if (direction) {
         if (DIRECTION[this.direction? 1: 0] === direction) {
           console.log(index);
-          // window.speechSynthesis.speak(new SpeechSynthesisUtterance(index.toString()));
+          window.speechSynthesis.speak(new SpeechSynthesisUtterance(index.toString()));
           return true;
         }
         return false;
