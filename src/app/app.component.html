@@ -1,0 +1,60 @@
+<p>
+	<button>
+  {{getBreatheOperation()}}
+  </button>
+  {{ counter }}
+</p>
+<div class="column">
+
+  <div class="row">
+    <div class="square1" *ngFor="let item of [].constructor(6); index as i">
+      <div class="square2" *ngIf="isEnabled('INHALE', i)"></div>
+    </div>    
+	</div>
+
+    <div class="row">
+    <div class="square1">
+      <div class="square2" *ngIf="isEnabled('HOLD', 4, 'LEFT')"></div>
+    </div>
+    <div class="square1-invisible" *ngFor="let item of [].constructor(4)">
+    </div>
+    <div class="square1">
+      <div class="square2" *ngIf="isEnabled('HOLD', 1, 'RIGHT')"></div>
+    </div>
+	  </div>
+    <div class="row">
+    <div class="square1">
+      <div class="square2" [hidden]="!isEnabled('HOLD', 3, 'LEFT')"></div>
+    </div>
+    <div class="square1-invisible" *ngFor="let item of [].constructor(4)">
+    </div>
+    <div class="square1">
+      <div class="square2" *ngIf="isEnabled('HOLD', 2, 'RIGHT')"></div>
+    </div>
+	  </div>
+    <div class="row">
+    <div class="square1">
+      <div class="square2" *ngIf="isEnabled('HOLD', 2, 'LEFT')"></div>
+    </div>
+    <div class="square1-invisible" *ngFor="let item of [].constructor(4)">
+    </div>
+    <div class="square1">
+      <div class="square2" *ngIf="isEnabled('HOLD', 3, 'RIGHT')"></div>
+    </div>
+	  </div>
+    <div class="row">
+    <div class="square1">
+      <div class="square2" *ngIf="isEnabled('HOLD', 1, 'LEFT')"></div>
+    </div>
+    <div class="square1-invisible" *ngFor="let item of [].constructor(4)">
+    </div>
+    <div class="square1">
+      <div class="square2" *ngIf="isEnabled('HOLD', 4, 'RIGHT')"></div>
+    </div>
+	  </div>
+    <div class="row">
+    <div class="square1" *ngFor="let item of [].constructor(6); index as i">
+      <div class="square2" *ngIf="isEnabled('EXHALE', 5 - i)"></div>
+    </div>
+	</div>
+</div>
